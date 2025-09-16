@@ -1,0 +1,79 @@
+:root{
+    /* Палитра */
+    --color-bg:#fff; --color-fg:#0b0b0b; --color-muted:#666;
+    --color-primary:#0a84ff;
+    --color-hover: #dcca00;
+    --color-danger:#b00020;
+    --btn-bg:#f2f2f2;
+    --btn-fg:#0b0b0b;
+    --btn-border:#d0d0d0;
+    /* Типографика и размеры */
+    --font-body: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    --space-1:4px; --space-2:8px; --space-3:16px; --space-4:24px; --space-5:40px;
+    /* Скругления и тени */
+    --radius:12px;
+    --shadow:0 1px 2px rgba(0,0,0,.08), 0 8px 24px rgba(0,0,0,.08);
+}
+
+/* Reset-минимум — подробнее в 1.8 */
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+html{ scroll-behavior:smooth; } /* Плавная прокрутка к #якорю */
+
+body{
+    background:var(--color-bg);
+    color:var(--color-fg);
+    font-family: var(--font-body);
+    line-height:1.5;
+}
+
+/* Тёмная тема: переопределяем только значения токенов */
+body.theme-dark{
+    --btn-bg: #393939;
+    --btn-fg:#ffffff;
+    --btn-border:#9b00ff;
+    --color-bg:#0b0b0b;
+    --color-fg: #979797;
+    --color-muted: #ffffff;
+    --color-primary:#6aa2ff;
+    --color-hover: #dc8f00;
+}
+
+/* Центровка и ограничение ширины контейнера */
+.container{ width:min(100% - 2*var(--space-4), 1120px); margin-inline:auto; }
+/* Вертикальные отступы секций по токенам */
+.section{ padding-block:var(--space-5); }
+.section__title{ margin:0 0 var(--space-3); }
+
+/* Порядок важен: link → visited → hover → active */
+a:link{}
+a:visited{}
+a:hover{
+    color: var(--color-hover);
+}
+a:active{}
+
+/* :where(...) не добавляет специфичности — проще переопределять позже */
+:where(a,button,input,select,textarea):focus-visible{
+    outline:2px solid var(--color-primary);
+    outline-offset:2px;
+}
+
+/* Недоступные элементы визуально «приглушаем» */
+:disabled,[aria-disabled="true"]{opacity:.6;cursor:not-allowed;}
+
+:target{ outline:2px dashed var(--color-primary); outline-offset:4px; } /*
+Подсветка цели */
+
+/* Медиа не «выпрыгивают» из контейнеров */
+img,video{ max-width:100%; height:auto; display:block; }
+/* Форм-контролы наследуют шрифт и цвет */
+button,input,select,textarea{
+    font:inherit;
+    background:var(--btn-bg);
+    color:var(--btn-fg);
+    border:1px solid var(--btn-border);
+}
+
+
+
