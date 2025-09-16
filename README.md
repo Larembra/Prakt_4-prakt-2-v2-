@@ -3,6 +3,6 @@
 Этот репозиторий является каркасом для будущего веб-приложения.
 ## Ссылки
 
-- [Публичная страница на GitHub Pages](https://Larembra.github.io/Prakt_1/)
+- [Публичная страница на GitHub Pages](https://larembra.github.io/Prakt_4-prakt-2-v2-/)
 
 
